@@ -13,7 +13,7 @@ see: https://forum.fysetc.com/d/328-fysetc-s6-rep-rap-discount-lcd-only-backligh
 ## Bootloader (on linux) v2.5
 install stm32cubeprogrammer
 ad first check install open jdk
-Check: $ java -version
-If not installed : $ sudo apt install default-jre
-install programmer! $  sudo ./SetupSTM32CubeProgrammer-2.5.0.linux
+- Check: $ java -version
+- If not installed : $ sudo apt install default-jre
+- install programmer! $  sudo ./SetupSTM32CubeProgrammer-2.5.0.linux
 
