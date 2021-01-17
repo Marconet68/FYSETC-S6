@@ -1,3 +1,8 @@
+#My PC config
+Ubuntu ver 20.04
+
+
+
 # Firmware Update
 ## SD card
 Not working for me with RepRapDiscount full graphic Smart controller
@@ -10,10 +15,11 @@ The connection is a bit tricky, youhave to invert connector
 see: https://forum.fysetc.com/d/328-fysetc-s6-rep-rap-discount-lcd-only-backlight
 
 
-## Bootloader (on linux) v2.5
-install stm32cubeprogrammer
-ad first check install open jdk
-- Check: $ java -version
-- If not installed : $ sudo apt install default-jre
-- install programmer! $  sudo ./SetupSTM32CubeProgrammer-2.5.0.linux
+## Bootloader (
+install stm32cubeprogrammer (version 2.6 which comes with java)
+
+To enter FDU mode i need to connect boot to 3.3V not to ground
+Take care to downloas at the right start adress 
+Otherwise you need to reload the bootloader.
+
 
