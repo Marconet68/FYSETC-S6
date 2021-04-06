@@ -509,9 +509,9 @@
     //Modif MFH: from anet A8
   // ANET A8 Standard Extruder at 210 Degree Celsius and 100% Fan
   //(measured after M106 S255 with M303 E0 S210 C8)
-  #define DEFAULT_Kp 21.59
-  #define DEFAULT_Ki 2.09
-  #define DEFAULT_Kd 55.61
+  #define DEFAULT_Kp 29.16
+  #define DEFAULT_Ki 3.12
+  #define DEFAULT_Kd 68.23
   #endif
 #endif // PIDTEMP
 
@@ -554,12 +554,13 @@
   //#define DEFAULT_bedKp 10.00
   //#define DEFAULT_bedKi .023
   //#define DEFAULT_bedKd 305.4
-    //Modif MFH: from anet A8
+  
+  //Modif MFH: from anet A8
   // ANET A8
   // original Bed + 0.3mm Heat conducting into 4mm borosilicate (PID-Autotune: M303 E-1 S60 C5):
-  #define DEFAULT_bedKp 297.86
-  #define DEFAULT_bedKi 32.48
-  #define DEFAULT_bedKd 803.45
+  #define DEFAULT_bedKp 54.97
+  #define DEFAULT_bedKi 9.96
+  #define DEFAULT_bedKd 202.29
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -762,7 +763,7 @@
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
 // Modif MFh: Machine
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 100, 100, 400, 104.2} // { 80, 80, 4000, 500 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 100, 100, 400, 415} // { 80, 80, 4000, 500 }
 
 
 /**
@@ -1011,7 +1012,7 @@
  *     O-- FRONT --+
  */
 // Modif MFh:  Machine
-#define NOZZLE_TO_PROBE_OFFSET { 23, 52, -2.92 } // { 10, 10, 0 }
+#define NOZZLE_TO_PROBE_OFFSET { 4, 63, -1.85 } // { 10, 10, 0 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1114,14 +1115,14 @@
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
 #define INVERT_X_DIR false
-#define INVERT_Y_DIR true
-#define INVERT_Z_DIR false
+#define INVERT_Y_DIR false
+#define INVERT_Z_DIR true
 
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
 // Modif MFH: Machine
-#define INVERT_E0_DIR true // false
+#define INVERT_E0_DIR false
 #define INVERT_E1_DIR false
 #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
@@ -1151,13 +1152,13 @@
 
 // The size of the print bed
 // Modif MFh : Machine
-#define X_BED_SIZE 220 // 200
-#define Y_BED_SIZE 220 // 200
+#define X_BED_SIZE 235// 200
+#define Y_BED_SIZE 235 // 200
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 // Modif MFh : Machine
-#define X_MIN_POS -64 // 0
-#define Y_MIN_POS -27 // 0
+#define X_MIN_POS -53 // 0
+#define Y_MIN_POS -29 // 0
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
@@ -1263,10 +1264,10 @@
  *   With an LCD controller the process is guided step-by-step.
  */
 //#define AUTO_BED_LEVELING_3POINT
-// Modif MFh: BLtouch
-#define AUTO_BED_LEVELING_LINEAR
+//#define AUTO_BED_LEVELING_LINEAR
 //#define AUTO_BED_LEVELING_BILINEAR
-//#define AUTO_BED_LEVELING_UBL
+// Modif MFh: BLtouch
+#define AUTO_BED_LEVELING_UBL
 //#define MESH_BED_LEVELING
 
 /**
@@ -1299,7 +1300,8 @@
   /**
    * Enable the G26 Mesh Validation Pattern tool.
    */
-  //#define G26_MESH_VALIDATION
+  //Modif MFh: enable
+  #define G26_MESH_VALIDATION
   #if ENABLED(G26_MESH_VALIDATION)
     #define MESH_TEST_NOZZLE_SIZE    0.4  // (mm) Diameter of primary nozzle.
     #define MESH_TEST_LAYER_HEIGHT   0.2  // (mm) Default layer height for the G26 Mesh Validation Tool.
